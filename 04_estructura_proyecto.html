@@ -1,0 +1,55 @@
+hrms/
+│
+├── app/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── routers/
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   └── auth.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   └── user.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   └── supabase_service.py
+│   └── config.py
+│
+├── tests/
+│   ├── __init__.py
+│   ├── test_main.py
+│   └── test_supabase.py
+│
+├── .env
+├── .gitignore
+├── requirements.txt
+└── README.md
+Descripción de la estructura:
+hrms/: Carpeta raíz del proyecto.
+app/: Contiene todos los archivos relacionados con la aplicación FastAPI.
+
+__init__.py: Hace que la carpeta app sea un paquete Python.
+main.py: Archivo principal de la aplicación FastAPI.
+routers/: Contiene los routers de FastAPI para diferentes rutas.
+__init__.py: Hace que la carpeta routers sea un paquete Python.
+user.py: Router para las rutas relacionadas con usuarios.
+auth.py: Router para las rutas de autenticación.
+models/: Contiene los modelos de datos.
+__init__.py: Hace que la carpeta models sea un paquete Python.
+user.py: Modelo de datos para usuarios.
+services/: Contiene los servicios que interactúan con Supabase.
+__init__.py: Hace que la carpeta services sea un paquete Python.
+supabase_service.py: Servicio para interactuar con Supabase.
+config.py: Archivo de configuración para la aplicación.
+tests/: Contiene los archivos de pruebas.
+
+__init__.py: Hace que la carpeta tests sea un paquete Python.
+test_main.py: Pruebas para el archivo main.py.
+test_supabase.py: Pruebas para el servicio de Supabase.
+.env: Archivo para almacenar variables de entorno, como las credenciales de Supabase.
+
+.gitignore: Archivo para ignorar ciertos archivos y directorios en Git.
+
+requirements.txt: Lista de dependencias del proyecto.
+
+README.md: Documentación básica del proyecto.
