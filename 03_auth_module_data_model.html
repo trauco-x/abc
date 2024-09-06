@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Modelo de Datos del Módulo de Autenticación y Roles - HRMS</title>
+</head>
+<body>
+    <h1>Modelo de Datos del Módulo de Autenticación y Roles - Sistema HRMS</h1>
+    
+    <h2>1. Tabla: users</h2>
+    <table border="1">
+        <tr>
+            <th>Campo</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>UUID</td>
+            <td>Identificador único del usuario (generado por Supabase)</td>
+        </tr>
+        <tr>
+            <td>email</td>
+            <td>VARCHAR(255)</td>
+            <td>Email del usuario (único)</td>
+        </tr>
+        <tr>
+            <td>full_name</td>
+            <td>VARCHAR(255)</td>
+            <td>Nombre completo del usuario</td>
+        </tr>
+        <tr>
+            <td>created_at</td>
+            <td>TIMESTAMP</td>
+            <td>Fecha y hora de creación de la cuenta</td>
+        </tr>
+        <tr>
+            <td>last_sign_in_at</td>
+            <td>TIMESTAMP</td>
+            <td>Fecha y hora del último inicio de sesión</td>
+        </tr>
+    </table>
+
+    <h2>2. Tabla: roles</h2>
+    <table border="1">
+        <tr>
+            <th>Campo</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>id</td>
+            <td>SERIAL</td>
+            <td>Identificador único del rol</td>
+        </tr>
+        <tr>
+            <td>name</td>
+            <td>VARCHAR(50)</td>
+            <td>Nombre del rol (único)</td>
+        </tr>
+        <tr>
+            <td>description</td>
+            <td>TEXT</td>
+            <td>Descripción del rol</td>
+        </tr>
+    </table>
+
+    <h2>3. Tabla: user_roles</h2>
+    <table border="1">
+        <tr>
+            <th>Campo</th>
+            <th>Tipo</th>
+            <th>Descripción</th>
+        </tr>
+        <tr>
+            <td>user_id</td>
+            <td>UUID</td>
+            <td>ID del usuario (clave foránea a users.id)</td>
+        </tr>
+        <tr>
+            <td>role_id</td>
+            <td>INTEGER</td>
+            <td>ID del rol (clave foránea a roles.id)</td>
+        </tr>
+    </table>
+
+    <h2>Notas:</h2>
+    <ul>
+        <li>La tabla 'users' es gestionada principalmente por Supabase Auth.</li>
+        <li>La relación entre usuarios y roles es de muchos a muchos, permitiendo que un usuario tenga múltiples roles.</li>
+        <li>Los campos de auditoría (created_at, updated_at) son manejados automáticamente por Supabase.</li>
+    </ul>
+</body>
+</html>
